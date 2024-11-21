@@ -21,7 +21,6 @@ class ImageProcessor():
     def __init__(self):
         self.image_dir = r"D:\Projects\Caption API\ImageCaption-API\api\images"
         print("Image directory:", self.image_dir)
-
         self.image_documents = SimpleDirectoryReader(self.image_dir).load_data()
         print("Image directory located")
         self.llm = Ollama(model="llama3:instruct")
@@ -34,7 +33,6 @@ class ImageProcessor():
         if not os.path.exists(image_path):
             print(f"Image path not found: {image_path}")
             return
-
         self.image_documents = SimpleDirectoryReader(self.image_dir).load_data()
         print(f"Loaded image data from {image_path}")
 
