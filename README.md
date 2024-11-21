@@ -5,14 +5,14 @@
 This API analyzes images to generate captions, identify potential privacy risks, and recommend music genres based on the visual content of the image. It leverages FastAPI, LlamaIndex, and multimodal AI models to perform these tasks.
 
 ## Features:
--**Image Caption Generation**: Generates a high-level description of the image.
--**Music Genre Recommendation**: Suggests a fitting music genre based on the image content.
--**Privacy Analysis**: Identifies potential privacy or security risks in the image.
+**Image Caption Generation**: Generates a high-level description of the image.  
+**Music Genre Recommendation**: Suggests a fitting music genre based on the image content.  
+**Privacy Analysis**: Identifies potential privacy or security risks in the image.  
 
 ## Technologies:
--**FastAPI** for the API backend
--**LlamaIndex** for multimodal AI image processing
--**Ollama** models for privacy and music genre generation
+**FastAPI** for the API backend  
+**LlamaIndex** for multimodal AI image processing  
+**Ollama** models for privacy and music genre generation  
 
 ## Steps to Run Locally
 
@@ -54,9 +54,9 @@ curl -X POST -F "file=@path/to/your/image.jpg" https://<ngrok-subdomain>.ngrok-f
 
 ### 6. View the Output:
 The response will include:
--**Image Description**: A high-level summary of the image.
--**Music Genre**: The most fitting music genre based on the image.
--**Privacy Information**: Any potential privacy risks or concerns detected in the image.
+**Image Description**: A high-level summary of the image.  
+**Music Genre**: The most fitting music genre based on the image.  
+**Privacy Information**: Any potential privacy risks or concerns detected in the image.  
 
 ## Contributing:
 Feel free to fork the repo, make changes, and submit pull requests for improvements!
