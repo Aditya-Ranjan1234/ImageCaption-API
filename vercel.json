@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/app.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/analyze-image", "dest": "api/app.py" },
+    { "src": "/generate-caption-genre", "dest": "api/app.py" }
+  ]
+}
