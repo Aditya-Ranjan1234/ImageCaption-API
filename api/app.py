@@ -1,7 +1,7 @@
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException
+from typing import Dict
 import os
 from img import ImageProcessor
-from typing import Dict
 
 app = FastAPI()
 processor = ImageProcessor()
@@ -22,7 +22,7 @@ async def analyze_image(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail=f"Error processing image: {str(e)}")
 
 @app.post("/generate-caption-genre")
-async def generate_caption_genre(context: str, file: UploadFile = File(...)) -> Dict:
+async def generate_caption_genre(context: str = Form(...), file: UploadFile = File(...)) -> Dict:
     image_path = os.path.join("images", file.filename)
     os.makedirs(os.path.dirname(image_path), exist_ok=True)
 
