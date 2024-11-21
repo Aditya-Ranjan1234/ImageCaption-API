@@ -40,6 +40,7 @@ This will start the Ollama server with the `llava-llama3` model and make it avai
 Start the FastAPI server with Uvicorn:
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
+uvicorn app:app --host 0.0.0.0 --port 8000 --timeout-keep-alive 0  # in case CPU instead of GPU so long processing times
 ```
 This will start the API locally on `http://localhost:8000`.
 
