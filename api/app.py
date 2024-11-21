@@ -9,7 +9,7 @@ async def analyze_image(file: UploadFile = File(...)):
     image_path = f"/tmp/{file.filename}"
     with open(image_path, "wb") as image_file:
         image_file.write(await file.read())
-    processor.image_documents = [image_path]
+    processor.load_uploaded_image(image_path)
     result = processor.generate_image_analysis()
     return result
 
@@ -18,6 +18,6 @@ async def generate_caption_genre(context: str, file: UploadFile = File(...)):
     image_path = f"/tmp/{file.filename}"
     with open(image_path, "wb") as image_file:
         image_file.write(await file.read())
-    processor.image_documents = [image_path]
+    processor.load_uploaded_image(image_path)
     result = processor.generate_image_caption_genre(context)
     return result
